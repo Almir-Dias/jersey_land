@@ -20,8 +20,11 @@ class ShirtsController < ApplicationController
 
   def update
     @shirt = Shirt.find(params[:id])
-    @shirt.update(shirt_params)
-    redirect_to shirt_path(@shirt)
+    if @shirt.update(shirt_params)
+      redirect_to shirt_path(@shirt)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
