@@ -1,4 +1,5 @@
 class ShirtsController < ApplicationController
+
   
 
 
@@ -29,7 +30,7 @@ class ShirtsController < ApplicationController
     @shirts = Shirt.all
   end
 
-
-
-  
+  def show
+    @shirt = Shirt.find(params[:id])
+  end
 end
