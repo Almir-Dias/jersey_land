@@ -1,13 +1,17 @@
 class ShirtsController < ApplicationController
 
   def new
-    @shirt = Shirts.new
+    @shirt = Shirt.new
   end
 
   def create
     shirt = Shirt.new(shirt_params)
-    shirt.save
-    redirect_to shirts_path
+    shirt.user_id = current_user.id
+    if shirt.save!
+      redirect_to shirts_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -26,12 +30,17 @@ class ShirtsController < ApplicationController
     redirect_to shirts_path
   end
 
-
   def index
     @shirts = Shirt.all
   end
 
   def show
     @shirt = Shirt.find(params[:id])
+  end
+
+  private
+
+  def shirt_params
+    params.require(:shirt).permit(:team, :gender, :size, :price)
   end
 end
