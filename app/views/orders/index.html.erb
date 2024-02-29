@@ -1,0 +1,9 @@
+<h1>Orders for <%= current_user.email %></h1>
+<ul>
+  <% @orders.each do |order| %>
+    <li>Shirt: <%= order.shirt.name %></li>
+    <!-- Adicione outros detalhes do pedido conforme necessário -->
+  <% end %>
+</ul>
+
+<%# shirt_orders %>

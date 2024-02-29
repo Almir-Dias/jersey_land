@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.where(user_id: current_user.id)
-
+    @orders = current_user.orders.includes(:shirt)
   end
 
   def create
