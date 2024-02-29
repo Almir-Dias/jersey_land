@@ -1,1 +1,14 @@
 <h1>  OLÁ ALMIR </h1>
+
+
+
+ <% @shirts.each do |shirt| %>
+  <div class="card-product">
+  <%= link_to(image_tag("https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg", alt: "Descrição da imagem"), shirt_path(shirt)) %>
+
+  <div class="card-product-infos">
+    <h2><%= shirt.team %></h2>
+    <p>Football team jerseys starting from $<strong><%= shirt.price %> </strong></p>
+  </div>
+</div>
+      <% end %>
