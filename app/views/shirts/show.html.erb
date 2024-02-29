@@ -8,5 +8,5 @@
 <div>
   <%= link_to 'Edit', edit_shirt_path(@shirt) %>
   <%= link_to 'Back to Index', shirts_path %>
-  <%= link_to 'Buy this Shirt',  shirt_orders_path(@shirt) , class: 'btn btn-primary' %>
+  <%= button_to 'Buy this Shirt',  shirt_orders_path(@shirt) , class: 'btn btn-primary' %>
 </div>
