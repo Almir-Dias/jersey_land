@@ -5,4 +5,5 @@ class Shirt < ApplicationRecord
   validates :price, presence: true
   validates :gender, presence: true
   validates :team, presence: true
+  has_one_attached :photo
 end

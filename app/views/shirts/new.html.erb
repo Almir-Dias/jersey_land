@@ -1,1 +1,12 @@
 <h1>  OLÁ ALMIR </h1>
+
+<%= simple_form_for(@shirt) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo, as: :file %>
+  <%= f.input :team %>
+  <%= f.input :gender %>
+  <%= f.input :size %>
+  <%= f.input :price %>
+  <%= f.submit %>
+  <!-- [...] -->
+<% end %>
