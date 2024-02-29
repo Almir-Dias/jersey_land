@@ -25,4 +25,13 @@ class ShirtsController < ApplicationController
     @shirt.destroy
     redirect_to shirts_path
   end
+
+
+  def index
+    @shirts = Shirt.all
+  end
+
+  def show
+    @shirt = Shirt.find(params[:id])
+  end
 end

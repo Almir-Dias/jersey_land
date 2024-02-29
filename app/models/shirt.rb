@@ -4,5 +4,5 @@ class Shirt < ApplicationRecord
   validates :size, presence: true
   validates :price, presence: true
   validates :gender, presence: true
-  validates :team, presence: true, uniqueness:  true
+  validates :team, presence: true
 end
