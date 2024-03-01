@@ -30,3 +30,9 @@ end
   female_shirt.user = user_almir
   female_shirt.save! 
 end
+
+male_shirt =  Shirt.new(team: Faker::Sports::Football.team, gender:'Male' , size:'G', price: Faker::Number.decimal(l_digits: 2, r_digits: 2))
+male_shirt.user = user_almir
+file= URI.open("https://w7.pngwing.com/pngs/187/688/png-transparent-fc-barcelona-t-shirt-la-liga-jersey-kit-fc-barcelona-tshirt-football-boot-jersey.png")
+male_shirt.photo.attach(io: file, filename: "camisa.png", content_type:"image/png")
+male_shirt.save!
