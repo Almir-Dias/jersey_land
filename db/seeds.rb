@@ -21,7 +21,7 @@ user_almir.save!
 3.times do
   male_shirt =  Shirt.new(team: Faker::Sports::Football.team, gender:'Male' , size:'G', price: Faker::Number.decimal(l_digits: 2, r_digits: 2))
   male_shirt.user = user_almir
-  male_shirt.save!  
+  male_shirt.save!
 end
 
   
