@@ -4,6 +4,10 @@
 <p>Gender: <%= @shirt.gender %></p>
 <p>Size: <%= @shirt.size %></p>
 <p>Price: <%= @shirt.price %></p>
+<% if  @shirt.photo.attached?  %>
+  <p>image: <%= cl_image_tag @shirt.photo.key, height: 300, width: 400, crop: :fill %></p>
+<% end %>
+
 
 <div>
   <%= link_to 'Edit', edit_shirt_path(@shirt) %>
