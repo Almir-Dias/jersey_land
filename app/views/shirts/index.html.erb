@@ -1,14 +1,17 @@
 <h1>  JerseysLand </h1>
 
+<div class="cards">
 
-
- <% @shirts.each do |shirt| %>
-  <div class="card-product">
-  <%= link_to(image_tag("https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg", alt: "Descrição da imagem"), shirt_path(shirt)) %>
-
-  <div class="card-product-infos">
-    <h2><%= shirt.team %></h2>
-    <p>Football team jerseys starting from $<strong><%= shirt.price %> </strong></p>
+<% @shirts.each do |shirt| %>
+  <div class="card" style="width: 18rem;">
+    <%= link_to(image_tag("https://e7.pngegg.com/pngimages/460/669/png-clipart-sports-fan-jersey-t-shirt-a-c-milan-2014-15-ac-milan-adidas-home-football-shirt-sleeve-t-shirt-tshirt-jersey.png", alt: "Descrição da imagem"), shirt_path(shirt), class: 'card-img-top') %>
+    <div class="card-body">
+      <h2><%= shirt.team %></h2>
+      <p class="card-text">Football team jerseys starting from $<strong><%= shirt.price %> </strong></p>
+    </div>
   </div>
+<% end %>
+
 </div>
-      <% end %>
+
+  
