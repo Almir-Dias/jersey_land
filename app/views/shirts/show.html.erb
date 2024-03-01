@@ -1,16 +1,24 @@
-<h1>Info of a Shirt</h1>
+<div class='container mt-5'>
+  <div class='card-show'>
+    
+      <% if  @shirt.photo.attached?  %>
+        <%= cl_image_tag @shirt.photo.key, height: 300, crop: :fill %>
+      <% end %>
+    
+    <div class='card-show-info' >
+      <h1><%= @shirt.team %></h1>
+      <p>Gender: <%= @shirt.gender %></p>
+      <p>Size: <%= @shirt.size %></p>
+      <p>Price: <%= @shirt.price %></p>
+        <div>
+          <%= link_to 'Edit', edit_shirt_path(@shirt) %>
+          <%= button_to 'Buy this Shirt',  shirt_orders_path(@shirt) , class: 'btn btn-primary'  %>
+        </div>
+    </div>
 
-<p>Team: <%= @shirt.team %></p>
-<p>Gender: <%= @shirt.gender %></p>
-<p>Size: <%= @shirt.size %></p>
-<p>Price: <%= @shirt.price %></p>
-<% if  @shirt.photo.attached?  %>
-  <p>image: <%= cl_image_tag @shirt.photo.key, height: 300, width: 400, crop: :fill %></p>
-<% end %>
 
-
-<div>
-  <%= link_to 'Edit', edit_shirt_path(@shirt) %>
-  <%= link_to 'Back to Index', shirts_path %>
-  <%= button_to 'Buy this Shirt',  shirt_orders_path(@shirt) , class: 'btn btn-primary' %>
+  </div>
+    <%= link_to 'Back to home', shirts_path %>
 </div>
+
+
