@@ -1,10 +1,10 @@
 <div class='container mt-5'>
   <div class='card-show'>
-    
+
       <% if  @shirt.photo.attached?  %>
         <%= cl_image_tag @shirt.photo.key, height: 300, crop: :fill %>
       <% end %>
-    
+
     <div class='card-show-info' >
       <h1><%= @shirt.team %></h1>
       <p>Gender: <%= @shirt.gender %></p>
@@ -21,4 +21,18 @@
     <%= link_to 'Back to home', shirts_path %>
 </div>
 
-
+<div class="footer">
+  <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
+    <p class="text-muted">2024 Company, Inc. All rights reserved.</p>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-muted">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-muted">FAQs</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+  </footer>
+</div>
