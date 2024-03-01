@@ -1,15 +1,26 @@
-<h1>  OLÁ ALMIR </h1>
+<h1>  JerseysLand </h1>
 
- <% @shirts.each do |shirt| %>
-  <div class="card-product">
-  <%= link_to(image_tag("https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg", alt: "Descrição da imagem"), shirt_path(shirt)) %>
+  <div class='container'>
+    <div class='row'>
+      <% @shirts.each do |shirt| %>
+        <div class='col-4'>
+          <div class="card mt-3">
 
-  <div class="card-product-infos">
-    <h2><%= shirt.team %></h2>
-    <p>Football team jerseys starting from $<strong><%= shirt.price %> </strong></p>
-  </div>
-</div>
+            <%= link_to shirt_path(shirt), class: 'card-img-top d-flex justify-content-center bg-white' do %>
+              <%= cl_image_tag shirt.photo.key, crop: :fill, height: 200 %>
+            <% end %>
+
+
+            <div class="card-body">
+              <h2><%= shirt.team %></h2>
+              <p class="card-text">Football team jerseys starting from $<strong><%= shirt.price %> </strong></p>
+            </div>
+
+          </div>
+        </div>
       <% end %>
+    </div>
+  </div>
 
 
 

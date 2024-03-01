@@ -1,4 +1,5 @@
 class ShirtsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def new
     @shirt = Shirt.new
@@ -39,6 +40,13 @@ class ShirtsController < ApplicationController
 
   def show
     @shirt = Shirt.find(params[:id])
+    
+  end
+
+  private
+  
+  def params_shirt
+    params.require(:shirt).permit(:team, :size, :gender, :price, :photo)
   end
 
   private
