@@ -11,7 +11,7 @@
       <p>Size: <%= @shirt.size %></p>
       <p>Price: <%= @shirt.price %></p>
         <div>
-          <%# <%= link_to 'Edit', edit_shirt_path(@shirt) %> 
+          <%= link_to 'Anuncie aqui', edit_shirt_path(@shirt)%>
           <%= button_to 'Buy this Shirt',  shirt_orders_path(@shirt) , class: 'btn btn-primary'  %>
         </div>
     </div>
