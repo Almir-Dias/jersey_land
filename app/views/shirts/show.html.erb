@@ -9,7 +9,7 @@
     <% end %>
 
     <% if  @shirt.photo.attached?  %>
-      <%= cl_image_tag @shirt.photo.key, height: 300, crop: :fill %>
+      <%= cl_image_tag @shirt.photo.key, height: 300, width:300, crop: :fill %>
     <% end %>
 
     <div class='card-show-info' >
@@ -17,10 +17,10 @@
       <p>Gênero: <%= @shirt.gender %></p>
       <p>Tamanho: <%= @shirt.size %></p>
       <p>Preço: <%= @shirt.price %></p>
-      
+
       <div>
         <% unless current_user == @shirt.user %>
-          <%= button_to 'Compre essa camisa',  shirt_orders_path(@shirt) , class: 'btn btn-primary' %>        
+          <%= button_to 'Compre essa camisa',  shirt_orders_path(@shirt) , class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>
@@ -30,24 +30,3 @@
 <div>
   <%= link_to 'Back to home', shirts_path %>
 </div>
-
-
-<div class="footer">
-  <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
-    <p class="text-muted">2024 Company, Inc. All rights reserved.</p>
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-muted">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-muted">FAQs</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-muted">About</a></li>
-    </ul>
-  </footer>
-</div>
-
-
-
-
