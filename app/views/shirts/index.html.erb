@@ -42,8 +42,10 @@
         <div class='col-4'>
           <div class="card mt-3">
 
-            <%= link_to shirt_path(shirt), class: 'card-img-top d-flex justify-content-center bg-white' do %>
-              <%= cl_image_tag shirt.photo.key, crop: :fill, height: 200 %>
+            <% if shirt.photo.attached?  %>
+              <%= link_to shirt_path(shirt), class: 'card-img-top d-flex justify-content-center bg-white' do %>
+                <%= cl_image_tag shirt.photo.key, crop: :fill, height: 200 %>
+              <% end %>
             <% end %>
 
 
@@ -59,7 +61,7 @@
   </div>
 
 
-<div class=footer>
+<div class="footer">
   <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
     <p class="col-md-4 mb-0 text-muted">2024 Company, Inc. All rights reserved.</p>
     <ul class="nav col-md-4 justify-content-end">
@@ -70,7 +72,8 @@
         <a href="#" class="nav-link px-2 text-muted">FAQs</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-muted">About</a></li>
+        <a href="#" class="nav-link px-2 text-muted">Sobre</a></li>
     </ul>
-  </footer>
+  </"footer">
 </div>
+
