@@ -1,19 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #59D5E0;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2D9596;">
   <div class="container">
-    <%= link_to 'JerseyLand', root_path, class: 'nav-link active', aria: {current: "page"} %>
+    <%= link_to root_path, class: 'navbar-brand' do %>
+      <%= image_tag('JerseyLand.png', alt: 'Logo', class: 'Logo-img',  style: 'max-height: 100px;') %>
+    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to 'Home', root_path, class: 'nav-link active', aria: {current: "page"} %>
+          <%= link_to 'Home', root_path, class: 'nav-link active', aria: {current: "page"}, style: "color: #F1FADA; font-family: Montserrat, sans-serif;" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Minhas camisas', my_shirts_shirts_path, class: 'nav-link active', aria: {current: "page"} %>
+          <%= link_to 'Minhas camisas', my_shirts_shirts_path, class: 'nav-link active', aria: {current: "page"}, style: "color: #F1FADA; font-family: Montserrat, sans-serif;" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Meus pedidos', orders_path, class: 'nav-link active', aria: {current: "page"} %>
+          <%= link_to 'Meus pedidos', orders_path, class: 'nav-link active', aria: {current: "page"}, style: "color: #F1FADA; font-family: Montserrat, sans-serif;" %>
         </li>
         <%# <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,11 +30,11 @@
 
         <% if user_signed_in?  %>
           <li class="nav-item">
-            <%= link_to 'Log Out', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link active', aria: {current: "page"} %>
+            <%= link_to 'Log Out', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link active', aria: {current: "page"}, style: "color: #F1FADA; font-family: Montserrat, sans-serif;" %>
           </li>
         <% else %>
           <li class="nav-item">
-              <%= link_to 'Log In', new_user_session_path, class: 'nav-link active', aria: {current: "page"} %>
+              <%= link_to 'Log In', new_user_session_path, class: 'nav-link active', aria: {current: "page"},style: "color: #F1FADA; font-family: Montserrat, sans-serif;" %>
             </li>
         <% end %>
         
@@ -40,7 +42,7 @@
       
       </ul>
     <%# <button class="btn btn-outline-light btn-anuncio" type="button"><%= link_to 'Teste', edit_shirt_path(@shirt)%>
-    <%= link_to 'Anuncie aqui', new_shirt_path, class: 'nav-link active', aria: {current: "page"} %>
+    <%= link_to 'quero vender', new_shirt_path, class: 'btn btn-custom', aria: {current: "page"}, style: "color: #265073; font-family: Montserrat, sans-serif; font-weight: bold;" %>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="O que você está procurando?" placeholder="O que você está procurando?" aria-label="O que você está procurando?">
