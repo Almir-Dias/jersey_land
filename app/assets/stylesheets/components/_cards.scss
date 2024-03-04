@@ -3,7 +3,153 @@
     align-items: center;
     background-color: #fff;
     width: 600px;
-    border-radius: 8px; 
+    border-radius: 8px;
     margin: auto;
 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.banner {
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.banner p {
+  margin: 10px 0 0;
+  font-size: 1.2em;
+}
+
+.banner-container {
+  display: flex;
+  height: 200px;
+}
+
+.banner-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+  background-color: #3498db;
+  border: 1px solid #2980b9;
+}
+
+.banner-parte-one {
+  width: 500px;
+  padding: 20;
+}
+
+.banner-parte-two {
+  width: 500px;
+  padding: 20;
+}
+
+
+.banner-parte-tree {
+  width: 500px;
+  padding: 20;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  font-family: Pacifico, sans-serif;;
+}
+
+.card-category {
+
+  background-size: cover;
+  background-position: center;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-europeu {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('europeu.jpeg');
+}
+
+.card-nacionais {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('nacionais.jpeg');
+}
+
+.card-classicas {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('classica.jpeg');
+}
+
+
+.card-category-large {
+  background-size: cover;
+  background-position: center;
+  height: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
+.banner-text {
+  font-family: "Pacifico", sans-serif;
 }
