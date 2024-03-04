@@ -1,11 +1,15 @@
-<h1>Orders for <%= current_user.email %></h1>
-<ul>
-  <% @orders.each do |order| %>
-    <li>Shirt: <%= order.shirt.team %></li>
-    <!-- Adicione outros detalhes do pedido conforme necessário -->
-  <% end %>
-</ul>
-
+<h1>Minhas Compras <%= current_user.email %></h1>
+      <div>
+        <%= button_to 'Compre mais',  shirts_path, class: 'btn btn-primary'%>
+      </div>
+<div class="container">
+  <ul>
+    <% @orders.each do |order| %>
+      <li>Shirt: <%= order.shirt.team %></li>
+      <!-- Adicione outros detalhes do pedido conforme necessário -->
+    <% end %>
+  </ul>
+</div>
 <%# shirt_orders %>
 <div class=footer>
   <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
