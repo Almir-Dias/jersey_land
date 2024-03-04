@@ -1,25 +1,36 @@
 <div class='container mt-5'>
   <div class='card-show'>
 
-      <% if  @shirt.photo.attached?  %>
-        <%= cl_image_tag @shirt.photo.key, height: 300, crop: :fill %>
-      <% end %>
+    <% if current_user == @shirt.user %>
+      <div>
+        <%= link_to 'Edite seu anúncio',  edit_shirt_path(@shirt) , class: 'btn btn-primary'  %>
+        <%= link_to 'Exclua seu anúncio',  shirt_path(@shirt), data: {"turbo-method": :delete}, class: 'btn btn-primary'  %>
+      </div>
+    <% end %>
+
+    <% if  @shirt.photo.attached?  %>
+      <%= cl_image_tag @shirt.photo.key, height: 300, crop: :fill %>
+    <% end %>
 
     <div class='card-show-info' >
       <h1><%= @shirt.team %></h1>
-      <p>Gender: <%= @shirt.gender %></p>
-      <p>Size: <%= @shirt.size %></p>
-      <p>Price: <%= @shirt.price %></p>
-        <div>
-          <%# <%= link_to 'Anuncie aqui', edit_shirt_path(@shirt)%>
-          <%= button_to 'Buy this Shirt',  shirt_orders_path(@shirt) , class: 'btn btn-primary'  %>
-        </div>
+      <p>Gênero: <%= @shirt.gender %></p>
+      <p>Tamanho: <%= @shirt.size %></p>
+      <p>Preço: <%= @shirt.price %></p>
+      
+      <div>
+        <% unless current_user == @shirt.user %>
+          <%= button_to 'Compre essa camisa',  shirt_orders_path(@shirt) , class: 'btn btn-primary' %>        
+        <% end %>
+      </div>
     </div>
-
-
   </div>
-    <%= link_to 'Back to home', shirts_path %>
 </div>
+
+<div>
+  <%= link_to 'Back to home', shirts_path %>
+</div>
+
 
 <div class="footer">
   <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
@@ -36,3 +47,7 @@
     </ul>
   </footer>
 </div>
+
+
+
+

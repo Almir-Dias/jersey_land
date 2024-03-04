@@ -1,8 +1,13 @@
-<h1> Faça aqui seu anúncio </h1>
-<%= @order %>
+<h1> Parabens, sua compra foi realizada com sucesso! </h1>
 
-<%= link_to 'Back to home', shirts_path %>
+    <div class='card-show-info' >
+      <h1><%= @order.shirt.team %></h1>
+      <p>Gênero: <%= @order.shirt.gender %></p>
+      <p>Tamanho: <%= @order.shirt.size %></p>
+      <p>Preço: <%= @order.shirt.price %></p>
+        <% if  @order.shirt.photo.attached?  %>
+            <%= cl_image_tag @order.shirt.photo.key, height: 300, crop: :fill %>
+        <% end %>
+        <div>
 
-<%# <%= link_to 'Anuncie aqui', edit_shirt_path(@shirt)%>
-
- <%# <%= button_to 'Buy this Shirt',  shirt_orders_path(@shirt) , class: 'btn btn-primary'  %>
+<%= link_to 'Voltar para home', shirts_path %>
