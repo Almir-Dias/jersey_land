@@ -1,19 +1,11 @@
-<h1>Compras de <%= current_user.email %></h1>
-      <div>
-        <%= link_to 'Compre mais',  shirts_path, class: 'btn btn-primary'%>
-      </div>
-<div class="container">
-  <h1>Minhas Compras <%= current_user.email %></h1>
-  <div>
-    <%= link_to 'Compre mais',  shirts_path, class: 'btn btn-primary'%>
-  </div>
-  <ul>
-    <% @orders.each do |order| %>
-      <li>Shirt: <%= order.shirt.team %></li>
-      <!-- Adicione outros detalhes do pedido conforme necessário -->
-    <% end %>
-  </ul>
-</div>
+<h1>Orders for <%= current_user.email %></h1>
+<ul>
+  <% @orders.each do |order| %>
+    <li>Shirt: <%= order.shirt.team %></li>
+    <!-- Adicione outros detalhes do pedido conforme necessário -->
+  <% end %>
+</ul>
+
 <%# shirt_orders %>
 <div class=footer>
   <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
@@ -29,7 +21,4 @@
         <a href="#" class="nav-link px-2 text-muted">About</a></li>
     </ul>
   </footer>
-</div>
-  </div>
-    <%# <%= link_to 'Back to home', shirts_path %>
 </div>
