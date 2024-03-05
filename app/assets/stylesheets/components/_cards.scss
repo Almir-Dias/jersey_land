@@ -10,6 +10,7 @@
 }
 
 .card-show-info {
+  padding: 16px;
   h1{
     font-weight: bold;
     font-family: "Montserrat";
@@ -85,7 +86,7 @@ body {
 }
 
 .card-category {
-
+  cursor: pointer;
   background-size: cover;
   background-position: center;
   height: 270px;
@@ -114,6 +115,7 @@ body {
 
 
 .card-category-large {
+  cursor: pointer;
   background-size: cover;
   background-position: center;
   height: 560px;

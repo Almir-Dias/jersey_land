@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2D9596; border-bottom: 5px solid #FAA300">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #2D9596; border-bottom: 5px solid #FAA300">
   <div class="container">
     <%= link_to root_path, class: 'navbar-brand' do %>
       <%= image_tag('JerseyLand.png', alt: 'Logo', class: 'Logo-img',  style: 'max-height: 100px;') %>
@@ -27,7 +27,6 @@
             <li><a class="dropdown-item" href="#">Seleções</a></li>
           </ul>
         </li> %>
-
         <% if user_signed_in?  %>
           <li class="nav-item">
             <%= link_to 'Log Out', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link active', aria: {current: "page"}, style: "color: #F1FADA; font-family: Montserrat, sans-serif;" %>
@@ -37,15 +36,13 @@
               <%= link_to 'Log In', new_user_session_path, class: 'nav-link active', aria: {current: "page"},style: "color: #F1FADA; font-family: Montserrat, sans-serif;" %>
             </li>
         <% end %>
-        
-      
-      
       </ul>
     <%# <button class="btn btn-outline-light btn-anuncio" type="button"><%= link_to 'Teste', edit_shirt_path(@shirt)%>
-    <%= link_to 'quero vender', new_shirt_path, class: 'btn btn-custom mr-2', aria: {current: "page"}, style: "color: #2D9596; font-family: Montserrat, sans-serif; font-weight: bold;" %>
+    <%= link_to 'Anuncie aqui', new_shirt_path, class: 'btn btn-custom mr-2', aria: {current: "page"}, style: "color: #2D9596; font-family: Montserrat, sans-serif; font-weight: bold;" %>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="O que você está procurando?" placeholder="O que você está procurando?" aria-label="O que você está procurando?" style="font-family: Montserrat, sans-serif; font-weight: SemiBold">
+        <input class="form-control" type="O que você está procurando?" placeholder="O que você está procurando?" aria-label="O que você está procurando?" style="font-family: Montserrat, sans-serif; font-weight: SemiBold">
+        <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
       </form>
     </div>
   </div>
