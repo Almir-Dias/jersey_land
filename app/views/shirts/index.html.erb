@@ -44,7 +44,7 @@
 
             <% if shirt.photo.attached?  %>
               <%= link_to shirt_path(shirt), class: 'card-img-top d-flex justify-content-center bg-white' do %>
-                <%= cl_image_tag shirt.photo.key, crop: :fill, height: 200 %>
+                <%= cl_image_tag shirt.photo.key, crop: :fill, height: 300, width: 300 %>
               <% end %>
             <% end %>
 
@@ -63,21 +63,26 @@
 <div class='container'>
 <div class="cards">
 <div>
-  <div class="card-category card-europeu">
-   <%= link_to 'Europeus', "#", class: 'nav-link active', aria: {current: "page"} %>
-
-  </div>
-
-  <div class="card-category card-nacionais mt-3">
-    <h2>Nacionais</h2>
-
-  </div>
+  
+  <a class="text-decoration-none" href="#">
+    <div class="card-category card-europeu">
+      <h2>Europeus</h2>
+    </div>
+  </a>
+  
+  <a class="text-decoration-none" href="#">
+    <div class="card-category card-nacionais mt-3">
+      <h2>Nacionais</h2>
+    </div>
+  </a>
 </div>
 
+<a class="text-decoration-none" href="#" >
   <div class="card-category-large card-classicas">
     <h2>As Clássicas<h2>
-
   </div>
+</a>
+
 </div>
 </div>
 

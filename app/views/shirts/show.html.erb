@@ -1,5 +1,5 @@
 <div class='container mt-5'>
-  <div class='card-show'>
+  <div class='card-show card d-flex flex-row shadow'>
 
     <% if current_user == @shirt.user %>
       <div>
@@ -9,7 +9,7 @@
     <% end %>
 
     <% if  @shirt.photo.attached?  %>
-      <%= cl_image_tag @shirt.photo.key, height: 300, crop: :fill %>
+      <%= cl_image_tag @shirt.photo.key, height: 300, width: 300, crop: :fill %>
     <% end %>
 
     <div class='card-show-info' >
@@ -27,9 +27,9 @@
   </div>
 </div>
 
-<div>
+<%# <div>
   <%= link_to 'Back to home', shirts_path %>
-</div>
+<%# </div> %>
 
 
 <div class="footer">
