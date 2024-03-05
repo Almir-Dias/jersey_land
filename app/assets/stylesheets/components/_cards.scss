@@ -34,7 +34,7 @@ body {
 
 .banner-container {
   display: flex;
-  height: 200px; /* Altura desejada para o banner */
+  height: 200px;
 }
 
 .banner-section {
@@ -44,8 +44,8 @@ body {
   align-items: center;
   color: #fff;
   font-size: 24px;
-  background-color: #3498db; /* Cor de fundo do banner, pode ser ajustada conforme necessário */
-  border: 1px solid #2980b9; /* Cor da borda, pode ser ajustada conforme necessário */
+  background-color: #3498db;
+  border: 1px solid #2980b9;
 }
 
 .banner-parte-one {
@@ -68,10 +68,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
+  font-family: Pacifico, sans-serif;;
 }
 
 .card-category {
-  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('camisa.jpeg');
+
   background-size: cover;
   background-position: center;
   height: 270px;
@@ -82,7 +83,7 @@ body {
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -110,40 +111,46 @@ body {
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-// Smallest device
+
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     grid-template-columns: 1fr;
   }
 }
 
-// Small devices (landscape phones, 576px and up)
+
 @media (min-width: 576px) {
   .cards {
     grid-template-columns: 1fr;
   }
 }
 
-// Medium devices (tablets, 768px and up)
+
 @media (min-width: 768px) {
   .cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-// Large devices (desktops, 992px and up)
+
 @media (min-width: 992px) {
   .cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-// Extra large devices (large desktops, 1200px and up)
+
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+
+
+.banner-text {
+  font-family: "Pacifico", sans-serif;
 }
