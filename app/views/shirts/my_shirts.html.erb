@@ -7,7 +7,7 @@
 
             <% if shirt.photo.attached?  %>
               <%= link_to shirt_path(shirt), class: 'card-img-top d-flex justify-content-center bg-white' do %>
-                <%= cl_image_tag shirt.photo.key, crop: :fill, height: 200 %>
+                <%= cl_image_tag shirt.photo.key, crop: :fill, height: 300, width: 300 %>
               <% end %>
             <% end %>
 
