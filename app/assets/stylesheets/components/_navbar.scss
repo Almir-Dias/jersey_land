@@ -1,9 +1,12 @@
 
-.navbar {
-  justify-content: space-between;
-  padding-top: 50px;
+.align-items-center {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.navbar-brand {
-  text-align: center;
+.btn-custom {
+  background-color: #F1FADA;
+  color: #265073;
+  border-radius: 10px;
 }
