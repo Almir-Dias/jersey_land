@@ -6,7 +6,7 @@
       <p>Tamanho: <%= @order.shirt.size %></p>
       <p>Preço: <%= @order.shirt.price %></p>
         <% if  @order.shirt.photo.attached?  %>
-            <%= cl_image_tag @order.shirt.photo.key, height: 300, width:300, crop: :fill %>
+            <%= cl_image_tag @order.shirt.photo.key, height: 200, width:200, crop: :fill %>
         <% end %>
         <div>
 
