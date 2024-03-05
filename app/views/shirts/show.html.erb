@@ -22,7 +22,7 @@
 
       <div>
         <% unless current_user == @shirt.user %>
-          <%= button_to 'Compre essa camisa',  shirt_orders_path(@shirt) , class: 'btn btn-primary' %>
+          <%= button_to 'Comprar',  shirt_orders_path(@shirt) , class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>
