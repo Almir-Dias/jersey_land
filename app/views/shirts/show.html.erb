@@ -1,13 +1,6 @@
 <div class='container mt-5'>
   <div class='card-show card d-flex flex-row shadow'>
 
-    <% if current_user == @shirt.user %>
-      <div>
-        <%= link_to 'Edite seu anúncio',  edit_shirt_path(@shirt) , class: 'btn btn-primary'  %>
-        <%= link_to 'Exclua seu anúncio',  shirt_path(@shirt), data: {"turbo-method": :delete}, class: 'btn btn-primary'  %>
-      </div>
-    <% end %>
-
     <% if  @shirt.photo.attached?  %>
       <%= cl_image_tag @shirt.photo.key, height: 300, width:300, crop: :fill %>
     <% end %>
@@ -17,6 +10,15 @@
       <p>Gênero: <%= @shirt.gender %></p>
       <p>Tamanho: <%= @shirt.size %></p>
       <p>Preço: <%= @shirt.price %></p>
+
+      <% if current_user == @shirt.user %>
+        <div class="botao mb-2">
+          <%= link_to 'Edite seu anúncio',  edit_shirt_path(@shirt) , class: 'btn btn-primary'  %>
+        </div>
+         <div class="botao mb-2">
+          <%= link_to 'Exclua seu anúncio',  shirt_path(@shirt), data: {"turbo-method": :delete}, class: 'btn btn-secondary'  %>
+        </div>
+      <% end %>
 
       <div>
         <% unless current_user == @shirt.user %>
@@ -32,18 +34,3 @@
 <%# </div> %>
 
 
-<div class="footer">
-  <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
-    <p class="text-muted">2024 Company, Inc. All rights reserved.</p>
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-muted">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-muted">FAQs</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-muted">About</a></li>
-    </ul>
-  </footer>
-</div>
