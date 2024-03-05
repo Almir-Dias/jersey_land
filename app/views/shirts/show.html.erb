@@ -9,7 +9,7 @@
     <% end %>
 
     <% if  @shirt.photo.attached?  %>
-      <%= cl_image_tag @shirt.photo.key, height: 300, width: 300, crop: :fill %>
+      <%= cl_image_tag @shirt.photo.key, height: 300, width:300, crop: :fill %>
     <% end %>
 
     <div class='card-show-info' >
@@ -17,10 +17,10 @@
       <p>Gênero: <%= @shirt.gender %></p>
       <p>Tamanho: <%= @shirt.size %></p>
       <p>Preço: <%= @shirt.price %></p>
-      
+
       <div>
         <% unless current_user == @shirt.user %>
-          <%= button_to 'Compre essa camisa',  shirt_orders_path(@shirt) , class: 'btn btn-primary' %>        
+          <%= button_to 'Compre essa camisa',  shirt_orders_path(@shirt) , class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>
@@ -47,7 +47,3 @@
     </ul>
   </footer>
 </div>
-
-
-
-
