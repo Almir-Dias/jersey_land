@@ -7,9 +7,9 @@
 
     <div class='card-show-info' >
       <h1><%= @shirt.team %></h1>
-      <p>Gênero: <%= @shirt.gender %></p>
-      <p>Tamanho: <%= @shirt.size %></p>
-      <p>Preço: <%= @shirt.price %></p>
+      <p><i class="fa-solid fa-venus-mars"></i> Gênero: <%= @shirt.gender %></p>
+      <p><i class="fa-solid fa-up-right-and-down-left-from-center"></i> Tamanho: <%= @shirt.size %></p>
+      <p><i class="fa-solid fa-dollar-sign"></i> Preço: <%= @shirt.price %></p>
 
       <% if current_user == @shirt.user %>
         <div class="botao mb-2">
